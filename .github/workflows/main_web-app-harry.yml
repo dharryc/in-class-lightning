@@ -33,7 +33,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_4837D94A712E49838FECE7CCFB392D7C }}/dharryc/in-class:${{ github.sha }}
+          tags: docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_4837D94A712E49838FECE7CCFB392D7C }}/in-class:${{ github.sha }}
           file: ./Dockerfile
 
   deploy:
@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'web-app-harry'
           slot-name: 'Production'
-          images: 'docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_4837D94A712E49838FECE7CCFB392D7C }}/dharryc/in-class:${{ github.sha }}'
+          images: 'docker.io/${{ secrets.AZUREAPPSERVICE_CONTAINERUSERNAME_4837D94A712E49838FECE7CCFB392D7C }}/in-class:${{ github.sha }}'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BF5DDF1E99A2445081447399A33D9C19 }}
